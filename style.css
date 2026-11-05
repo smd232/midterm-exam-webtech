@@ -50,6 +50,7 @@ header p {
 .controls input[type="text"] {
   flex: 2 1 220px;
 }
+
 .controls select {
   flex: 1 1 160px;
 }
@@ -75,7 +76,8 @@ header p {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
-  overflow-wrap: anywhere; /* long words wrap instead of pushing the card wider */
+  overflow-wrap: anywhere;
+  /* long words wrap instead of pushing the card wider */
 }
 
 /* FIX 4: the old "#board .item" rule was stronger than this one and
@@ -122,7 +124,8 @@ header p {
   gap: 8px;
   min-height: 44px;
   font-size: 16px;
-  flex: 1 1 100%; /* sits on its own line on a phone */
+  flex: 1 1 100%;
+  /* sits on its own line on a phone */
 }
 
 .hide-claimed input {
