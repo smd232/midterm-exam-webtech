@@ -4,6 +4,7 @@
 // Removed API_KEY: a key in front-end code is not secret and a static file does not need it.
 const DATA_URL = "items.json";
 
+const hideClaimed = document.querySelector("#hideClaimed");
 const board = document.querySelector("#board");
 const message = document.querySelector("#message");
 const count = document.querySelector("#count");
@@ -62,22 +63,36 @@ function buildCategories() {
   });
 }
 
-// Apply search + category together, then show the cards, count and messages.
+// Apply search + category + hide-claimed together, put unclaimed first,
+// then show the cards, count and messages.
 function update() {
   const query = searchBox.value.trim().toLowerCase();
   const chosen = categorySelect.value;
+  const hide = hideClaimed.checked;
 
-  const shown = allItems.filter(item => {
+  const matches = allItems.filter(item => {
     const nameMatches = String(item.name ?? "").toLowerCase().includes(query);
     const categoryMatches = chosen === "all" || categoryKey(item) === chosen;
-    return nameMatches && categoryMatches;
+    const claimedOk = !(hide && item.claimed === true);
+    return nameMatches && categoryMatches && claimedOk;
   });
+
+  // Part 4: unclaimed first, claimed after. Each group keeps its original order.
+  const shown = [
+    ...matches.filter(item => item.claimed !== true),
+    ...matches.filter(item => item.claimed === true)
+  ];
 
   render(shown);
   count.textContent = `Showing ${shown.length} of ${allItems.length}`;
-  message.textContent = shown.length === 0
-    ? "No items match your search. Try a different word or category."
-    : "";
+
+  if (shown.length === 0) {
+    message.textContent = hide
+      ? "No unclaimed items match. Try a different word or category, or untick Hide claimed items."
+      : "No items match your search. Try a different word or category.";
+  } else {
+    message.textContent = "";
+  }
 }
 
 async function loadItems() {
@@ -126,5 +141,6 @@ async function loadItems() {
 
 searchBox.addEventListener("input", update);
 categorySelect.addEventListener("change", update);
+hideClaimed.addEventListener("change", update);
 
 loadItems();
