@@ -1,0 +1,33 @@
+TEST EVIDENCE NOTES - Lost & Found Board (CL-101 Mid Term Lab Exam, Variant C)
+Screenshots are in this folder as 1.png to 6.png.
+
+1.png - Search for "zzzz"
+  Search box contains zzzz. The page shows the empty message
+  "No items match your search. Try a different word or category."
+  and the count line reads "Showing 0 of 14".
+
+2.png - Category chosen with the correct count
+  Dropdown set to Electronics. Three cards are shown (Tablet in blue cover,
+  Camera lens cap, Wireless mouse) and the count line reads "Showing 3 of 14".
+
+3.png - 404 error with the Network tab visible
+  DATA_URL was temporarily set to a wrong file name (itemz.json).
+  The Network tab shows itemz.json with status 404 in red, and the page shows
+  the friendly message "Sorry, the list could not be loaded (error 404).
+  Please try again later." No cards and no endless "Loading".
+
+4.png - No-connection error message
+  DATA_URL was temporarily set to https://items.invalid/items.json.
+  The page shows "Could not connect. Please check your internet connection
+  and try again." The Console shows the failed request (ERR_NAME_NOT_RESOLVED).
+
+5.png - Page at 375 px width
+  DevTools device toolbar set to 375 px wide. Search box, dropdown and the
+  Hide claimed items tickbox are stacked, the cards are in one column
+  with Still waiting badges, and there is no sideways scrolling.
+
+6.png - Hide claimed items ticked together with a search
+  Tickbox ticked and the search box contains "key". Only the unclaimed match
+  (Spare house key) is shown, and the count line reads "Showing 1 of 14".
+
+After taking screenshots 3 and 4, DATA_URL was changed back to "items.json".
