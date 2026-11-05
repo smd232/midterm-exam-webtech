@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #222;
+}
+
+header {
+  background: #1d7a3b;
+  color: #fff;
+  padding: 16px 24px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  width: 900px;
+}
+
+.controls input,
+.controls select {
+  padding: 2px;
+  font-size: 12px;
+}
+
+#message,
+#count {
+  padding: 0 24px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 12px;
+  padding: 0 24px 24px;
+}
+
+.item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.item.claimed {
+  color: #999;
+  background: #eee;
+}
+
+/* FIX 4: the old "#board .item" rule overrode ".item.claimed", so claimed items never looked grey. I deleted that rule. Found it in DevTools Styles (crossed out). 
+#board .item {
+  color: #222;
+  background: #fff;
+} */
+
+.item h3 {
+  margin: 0 0 6px;
+}
+
+.date {
+  font-size: 12px;
+  color: #666;
+}

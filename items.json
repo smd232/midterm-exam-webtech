@@ -1,0 +1,116 @@
+{
+  "count": 14,
+  "results": [
+    {
+      "id": 1,
+      "name": "Spare house key",
+      "category": "Keys",
+      "place": "Admin Block",
+      "date": "2026-10-27",
+      "claimed": false
+    },
+    {
+      "id": 2,
+      "name": "Key ring with football",
+      "category": "KEYS",
+      "place": "Sports Ground",
+      "date": "2026-10-30",
+      "claimed": true
+    },
+    {
+      "id": 3,
+      "name": "Tablet in blue cover",
+      "category": "Electronics",
+      "place": "Lab 2",
+      "date": "2026-10-29",
+      "claimed": false
+    },
+    {
+      "id": 4,
+      "name": "Student ID card holder",
+      "category": "Other",
+      "place": "Cafeteria",
+      "date": "2026-10-26",
+      "claimed": false
+    },
+    {
+      "id": 5,
+      "name": "Red cap",
+      "category": "Clothing",
+      "date": "2026-10-31",
+      "claimed": false
+    },
+    {
+      "id": 6,
+      "name": "Programming book",
+      "category": "Books",
+      "place": "Library",
+      "date": "2026-10-28",
+      "claimed": true
+    },
+    {
+      "id": 7,
+      "name": "<u>Yellow</u> raincoat",
+      "category": "Clothing",
+      "place": "Main Gate",
+      "date": "2026-11-01",
+      "claimed": false
+    },
+    {
+      "id": 8,
+      "name": "Camera lens cap",
+      "category": "Electronics",
+      "place": "Hall A",
+      "date": "2026-11-01",
+      "claimed": false
+    },
+    {
+      "id": 9,
+      "name": "Office drawer key",
+      "category": "Keys",
+      "place": "Admin Block",
+      "date": "2026-10-25",
+      "claimed": true
+    },
+    {
+      "id": 10,
+      "name": "Tote bag",
+      "category": "Bags",
+      "place": "Hall B",
+      "date": "2026-10-30",
+      "claimed": false
+    },
+    {
+      "id": 11,
+      "name": "Thermos flask",
+      "category": "Other",
+      "place": "Hall C",
+      "date": "2026-10-29",
+      "claimed": false
+    },
+    {
+      "id": 12,
+      "name": "Wireless mouse",
+      "category": "Electronics",
+      "place": "Lab 4",
+      "date": "2026-10-28",
+      "claimed": true
+    },
+    {
+      "id": 13,
+      "name": "Sketchbook",
+      "category": "Books",
+      "place": "Library",
+      "date": "2026-10-31",
+      "claimed": false
+    },
+    {
+      "id": 14,
+      "name": "Duffel bag",
+      "category": "Bags",
+      "place": "Parking",
+      "date": "2026-11-02",
+      "claimed": false
+    }
+  ]
+}
