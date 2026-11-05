@@ -1,39 +1,74 @@
+/* Include padding in widths, so nothing ends up wider than the screen. */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f5f5f5;
   color: #222;
+  font-size: 16px;
 }
 
 header {
   background: #1d7a3b;
   color: #fff;
-  padding: 16px 24px;
+  padding: 16px;
 }
 
+header h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0;
+}
+
+/* Phone fix: the old fixed width (900px) forced sideways scrolling.
+   Now the controls wrap onto a new line when there is no room. */
 .controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  padding: 16px 24px;
-  width: 900px;
+  padding: 16px;
 }
 
+/* Phone fix: 44px+ tall for easy tapping, 16px text so it is readable
+   and phones do not zoom in when you tap the box. */
 .controls input,
 .controls select {
-  padding: 2px;
-  font-size: 12px;
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.controls input {
+  flex: 2 1 220px;
+}
+
+.controls select {
+  flex: 1 1 160px;
 }
 
 #message,
 #count {
-  padding: 0 24px;
+  padding: 0 16px;
+  margin: 8px 0;
 }
 
+/* Phone fix: old layout was 3 fixed columns of 300px (about 936px).
+   auto-fill with minmax gives 1 column on a phone and more columns as the
+   screen gets wider. */
 #board {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 12px;
-  padding: 0 24px 24px;
+  padding: 0 16px 24px;
 }
 
 .item {
@@ -41,24 +76,43 @@ header {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
+  overflow-wrap: anywhere; /* long words wrap instead of pushing the card wider */
 }
 
+/* FIX 4: the old "#board .item" rule was stronger than this one and
+   overrode it, so I deleted that rule. Found it in DevTools Styles (crossed out). */
 .item.claimed {
-  color: #999;
-  background: #eee;
+  color: #666;
+  background: #e6e6e6;
 }
-
-/* FIX 4: the old "#board .item" rule overrode ".item.claimed", so claimed items never looked grey. I deleted that rule. Found it in DevTools Styles (crossed out). 
-#board .item {
-  color: #222;
-  background: #fff;
-} */
 
 .item h3 {
-  margin: 0 0 6px;
+  margin: 8px 0 6px;
+}
+
+.item p {
+  margin: 4px 0;
 }
 
 .date {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.badge-waiting {
+  background: #d9f2e0;
+  color: #14602d;
+}
+
+.badge-claimed {
+  background: #666;
+  color: #fff;
 }
