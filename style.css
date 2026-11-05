@@ -37,7 +37,7 @@ header p {
 
 /* Phone fix: 44px+ tall for easy tapping, 16px text so it is readable
    and phones do not zoom in when you tap the box. */
-.controls input,
+.controls input[type="text"],
 .controls select {
   min-height: 44px;
   padding: 8px 12px;
@@ -47,10 +47,9 @@ header p {
   background: #fff;
 }
 
-.controls input {
+.controls input[type="text"] {
   flex: 2 1 220px;
 }
-
 .controls select {
   flex: 1 1 160px;
 }
