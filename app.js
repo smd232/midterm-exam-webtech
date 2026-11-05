@@ -33,6 +33,9 @@ function categoryLabel(key) {
 function render(items) {
   board.innerHTML = items.map(item => `
     <div class="item ${item.claimed ? "claimed" : ""}">
+      <span class="badge ${item.claimed ? "badge-claimed" : "badge-waiting"}">
+        ${item.claimed ? "Claimed" : "Still waiting"}
+      </span>
       <h3>${esc(item.name)}</h3>
       <p>${esc(categoryLabel(categoryKey(item)))} · ${esc(item.place || "Place not recorded")}</p>
       <p class="date">Found on ${esc(item.date || "date not recorded")}</p>
