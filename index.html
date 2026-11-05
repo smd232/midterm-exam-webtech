@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Phone fix: without this, phones show the page zoomed out as if it were a wide desktop. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Campus Lost &amp; Found</title>
     <link rel="stylesheet" href="style.css">
     <!-- FIX 1: script was in <head> and ran before the page loaded, so #message was null. Added defer. Found it from the console error. -->
