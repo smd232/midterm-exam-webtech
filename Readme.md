@@ -15,6 +15,8 @@
 ## 2. What I built (Parts 2 to 4)
 Write 3 to 5 lines in your own words.
 
+I fixed all the runtime errors happening in the console, the page was loading fine but no entries were being seen, I fixed script tag, awaited res.json() and then fixed 3-4 more errors, after that the page loads fine and all the entries can be seen.
+
 ## 3. AI log (at least 2 entries)
 For each entry: what I asked, what the AI gave me, **what was wrong or missing**, and **how I checked it**.
 
